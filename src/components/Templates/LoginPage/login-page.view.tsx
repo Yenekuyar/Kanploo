@@ -1,29 +1,27 @@
-import { StyledInput } from "../../Atoms/Input/Input.style"
-import { StyledButton } from "../../Atoms/Button/Button.style"
-import { LoginForm } from "../../Molecules/Form/Form.style"
-import { LoginLabel } from "../../Atoms/Label/Label.style"
-import { LoginContainer } from "../../Molecules/Container/Container.style"
+import { LoginInputWrapper } from "./LoginInput/login-input.styles";
+import { StyledButton } from "../../Atoms/Button/Button.style";
+import { LoginLabelWrapper } from "./LoginLabel/login-label.styles";
 
 export default function LoginPage() {
     return (
-            <LoginForm>
+            <div>
                 <h1>Kanploo</h1>
 
-                <LoginContainer>
-                    <LoginLabel><b>E-mail</b></LoginLabel>
-                    <StyledInput
+                <div>
+                    <LoginLabelWrapper><b>E-mail</b></LoginLabelWrapper>
+                    <LoginInputWrapper
                         type="text"
                         placeholder="Enter E-mail"
                         id="email_input"
                     />
 
-                    <LoginLabel><b>Password</b></LoginLabel>
-                    <StyledInput
-                        type="text"
+                    <LoginLabelWrapper><b>Password</b></LoginLabelWrapper>
+                    <LoginInputWrapper
+                        type="password"
                         placeholder="Enter Password"
-                        id="password_input"
+                        id="login-password_input"
                     />
-                </LoginContainer>
+                </div>
     
                 <StyledButton
                     type="submit"
@@ -31,6 +29,6 @@ export default function LoginPage() {
                     Login
                 </StyledButton>
 
-            </LoginForm>
+            </div>
     )
 }

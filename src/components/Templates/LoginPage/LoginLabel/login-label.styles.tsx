@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const LoginLabel = styled.label`
+export const LoginLabelWrapper = styled.label`
 
     @media (max-width: 600px) {
         align-items: flex-start;

@@ -1,5 +1,5 @@
 interface LabelProps {
-
+    
 }
 
 export const Label = ({  }) => {

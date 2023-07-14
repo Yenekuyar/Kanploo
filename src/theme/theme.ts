@@ -1,7 +1,7 @@
 export const theme = ({
     pallete: {
         primary: {
-            text: '#eeeeee',
+            text: '#efefef',
             main: '#ad7be9',
             dark: '#6527be',
         },
