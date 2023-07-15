@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { LoginPageWrapper } from './components/Templates/LoginPage/login-page.styles';
+import LoginPage from './components/Templates/LoginPage/login-page.view';
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <LoginPageWrapper />,
+        element: <LoginPage />,
       },
       {
         path: "home",

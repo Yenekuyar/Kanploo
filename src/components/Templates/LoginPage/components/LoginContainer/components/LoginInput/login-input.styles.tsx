@@ -7,8 +7,9 @@ export const LoginInputWrapper = styled.input`
     border: none;
     border-radius: 8px;
     width: 85%;
+    margin: 8px;
 
-    &:focus {
+    &:active {
         background-color: ${props => props.theme.pallete.primary.dark};
     }
 `;

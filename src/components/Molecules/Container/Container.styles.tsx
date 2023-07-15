@@ -15,6 +15,7 @@ export const LoginContainer = styled(StyledContainer)`
         flex-wrap: wrap;
         flex-direction: column;
         align-items: flex-start;
+        text-align: left;
         width: 100%;
         height: 100%;
     }

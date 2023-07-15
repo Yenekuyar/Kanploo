@@ -5,6 +5,13 @@ export const GlobalStyles = createGlobalStyle`
     html {
         width: 100%;
         height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    h1 {
+        margin: 0;
     }
 
     body {
@@ -12,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         width: 100%;
         height: 100%;
+        overflow: hidden;
         font-family: Arial, sans-serif;
     }
 
@@ -22,10 +30,12 @@ export const GlobalStyles = createGlobalStyle`
     .App {
         width: 100%;
         height: 100%;
+        overflow: hidden;
     }
 
     #root {
         width: 100%;
         height: 100%;
+        overflow: hidden;
     }
 `;
