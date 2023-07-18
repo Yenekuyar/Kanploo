@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-, "src/components/Templates/LoginPage/components/LoginContainer/components/LoginLabel"  ]
+, "src/components/Templates/LoginPage/components/LoginLabel"  ]
 }

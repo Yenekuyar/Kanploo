@@ -6,8 +6,8 @@ ComponentName
   - services - api
   - types - typescript
 
-  x component-name.style.ts - css
-  x component-name.controller.ts - lógica
-  x component-name.props.ts - typagem
-  x component-name.view.ts - html
+  x component-name.style.tsx - css
+  x component-name.controller.tsx - lógica
+  x component-name.props.tsx - typagem
+  x component-name.view.tsx - html
   x index.ts (só exporta)

@@ -1,35 +1,32 @@
-import { LoginInputWrapper } from "./components/LoginContainer/components/LoginInput/login-input.styles";
-import { StyledButton } from "../../Atoms/Button/Button.style";
+import { LoginInputWrapper } from "./components/LoginInput/login-input.styles";
 import { LoginPageWrapper } from "./login-page.styles";
-import { Container } from "@mui/material";
-import { StyledLoginLabel } from "./components/LoginContainer/components/LoginLabel/login-label.styles";
+import { StyledLoginLabel } from "./components/LoginLabel/login-label.styles";
+import { StyledButton } from "../../Atoms/Button/button.styles";
+
+import { handleLoginSubmit } from './login-page.controller'
 
 export default function LoginPage() {
     return (
             <LoginPageWrapper>
                 <h1>Kanploo</h1>
 
-                <Container>
-                    <StyledLoginLabel>E-mail</StyledLoginLabel>
+                <form onSubmit={handleLoginSubmit}>
                     <LoginInputWrapper
                         type="text"
                         placeholder="Enter E-mail"
-                        id="email_input"
+                        id="login-email_input"
                     />
-
-                    <StyledLoginLabel>Password</StyledLoginLabel>
                     <LoginInputWrapper
                         type="password"
                         placeholder="Enter Password"
                         id="login-password_input"
                     />
-                </Container>
-    
-                <StyledButton
-                    type="submit"
-                >
-                    Login
-                </StyledButton>
+                    <StyledButton
+                        type="submit"
+                    >
+                        Login
+                    </StyledButton>
+                </form>
 
             </LoginPageWrapper>
     )
