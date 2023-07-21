@@ -1,25 +1,30 @@
 import { LoginInputWrapper } from "./components/LoginInput/login-input.styles";
 import { LoginPageWrapper } from "./login-page.styles";
-import { StyledLoginLabel } from "./components/LoginLabel/login-label.styles";
 import { StyledButton } from "../../Atoms/Button/button.styles";
+import { LoginTitle } from "./components/LoginTitle/login-title.styles";
+import { IProps } from "./login-page.props";
 
-import { handleLoginSubmit } from './login-page.controller'
 
-export default function LoginPage() {
+import { useState } from "react";
+
+
+export default function LoginPage(props: IProps) {
+
     return (
             <LoginPageWrapper>
-                <h1>Kanploo</h1>
-
-                <form onSubmit={handleLoginSubmit}>
+                <LoginTitle>Kanploo</LoginTitle>
+                <form onSubmit={props.handleLoginSubmit}>
                     <LoginInputWrapper
                         type="text"
                         placeholder="Enter E-mail"
                         id="login-email_input"
+                        onChange={props.handleEmailChange}
                     />
                     <LoginInputWrapper
                         type="password"
                         placeholder="Enter Password"
                         id="login-password_input"
+                        onChange={props.handlePasswordChange}
                     />
                     <StyledButton
                         type="submit"
@@ -27,7 +32,6 @@ export default function LoginPage() {
                         Login
                     </StyledButton>
                 </form>
-
             </LoginPageWrapper>
     )
 }

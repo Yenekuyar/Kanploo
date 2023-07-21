@@ -6,8 +6,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { LoginPageWrapper } from './components/Templates/LoginPage/login-page.styles';
-import LoginPage from './components/Templates/LoginPage/login-page.view';
+import LoginController from './components/Templates/LoginPage/login-page.controller';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <LoginPage />,
+        element: <LoginController />,
       },
       {
         path: "home",

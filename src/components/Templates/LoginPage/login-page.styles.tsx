@@ -12,5 +12,7 @@ export const LoginPageWrapper = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    } &h1 {
+        margin-bottom: 40px;
     }
 `
