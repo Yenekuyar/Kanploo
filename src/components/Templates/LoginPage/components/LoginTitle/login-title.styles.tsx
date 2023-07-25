@@ -6,4 +6,7 @@ export const LoginTitle = styled(StyledTitle)`
         margin-bottom: 120px;
     }
     
+    @media (max-width: 300px) {
+        margin-bottom: 24px;
+    }
 `

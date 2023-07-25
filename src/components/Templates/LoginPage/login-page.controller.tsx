@@ -1,21 +1,21 @@
 import { useState } from "react";
-import { ILogin } from "./login-page.props";
 import LoginPage from "./login-page.view";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginController() {
 
     const [email, setEmail] = useState<string | null>('')
     const [password, setPassword] = useState<string | null>('')
 
+    const navigate = useNavigate();
+
     const handleEmailChange = (event: { target: { value: string | null }; }) => {
-        console.log(event.target.value)
     
         setEmail(event.target.value)
     }
     
     const handlePasswordChange = (event: { target: { value: string | null }; }) => {
         
-
         setPassword(event.target.value)
     }
     
@@ -30,7 +30,9 @@ export default function LoginController() {
                 'Content-Type': 'application/json'
             }
         }).then(response => response.json())
-        .then(json => console.log(json))
+        .then(json => localStorage.setItem('userkey', json.value[0].UserKey))
+        
+        navigate("/home")
     }
 
     return <LoginPage 

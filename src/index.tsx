@@ -20,6 +20,12 @@ const router = createBrowserRouter([
       {
         path: "home",
         element: <HomePage />,
+        loader: async ({ request, params }) => {
+          return fetch(
+            `/fake/api/teams/${params.teamId}.json`,
+            { signal: request.signal }
+          );
+        },
       },
     ]
   }

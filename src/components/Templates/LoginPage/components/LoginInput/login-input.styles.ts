@@ -6,8 +6,8 @@ export const LoginInputWrapper = styled.input`
     color: ${props => props.theme.pallete.primary.text};
     border: none;
     border-radius: 8px;
-    width: 85%;
-    margin: 8px;
+    width: 90%;
+    margin: 4px 0;
 
     &:active {
         background-color: ${props => props.theme.pallete.primary.dark};
