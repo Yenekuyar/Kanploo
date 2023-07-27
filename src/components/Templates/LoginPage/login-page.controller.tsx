@@ -22,7 +22,6 @@ export default function LoginController() {
     const handleLoginSubmit: React.FormEventHandler<HTMLFormElement> = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
     
-    
         fetch('https://central-api.ploomes.com/api/Self/Login', {
             method: 'POST',
             body: JSON.stringify({"Email": `${email}`,"Password": `${password}`}),

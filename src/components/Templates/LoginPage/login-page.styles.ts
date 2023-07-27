@@ -24,7 +24,7 @@ export const LoginPageWrapper = styled.div`
         }
 
         .login-form {
-            background-color: ${props => props.theme.pallete.primary.main};
+            background-color: ${props => props.theme.pallete.primary.grey4};
             border: 2px solid ${props => props.theme.pallete.primary.dark};
             display: inline-block;
             text-align: center;

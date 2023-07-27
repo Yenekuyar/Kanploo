@@ -20,7 +20,7 @@ export const GlobalStyles = createGlobalStyle`
         width: 100%;
         height: 100%;
         overflow: hidden;
-        background-color: #000;
+        background-color: ${props => props.theme.pallete.primary.grey6};
         font-family: Arial, sans-serif;
     }
 

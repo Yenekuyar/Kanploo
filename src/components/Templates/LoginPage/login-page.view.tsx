@@ -3,7 +3,6 @@ import { LoginPageWrapper } from "./login-page.styles";
 import { StyledButton } from "../../Atoms/Button/button.styles";
 import { LoginTitle } from "./components/LoginTitle/login-title.styles";
 import { IProps } from "./login-page.props";
-import { Link } from "react-router-dom";
 
 
 export default function LoginPage(props: IProps) {
