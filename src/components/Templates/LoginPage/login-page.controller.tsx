@@ -21,17 +21,21 @@ export default function LoginController() {
     
     const handleLoginSubmit: React.FormEventHandler<HTMLFormElement> = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-    
-        fetch('https://central-api.ploomes.com/api/Self/Login', {
-            method: 'POST',
-            body: JSON.stringify({"Email": `${email}`,"Password": `${password}`}),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(response => response.json())
-        .then(json => localStorage.setItem('userkey', json.value[0].UserKey))
         
-        navigate("/home")
+        try {
+            fetch('https://central-api.ploomes.com/api/Self/Login', {
+                method: 'POST',
+                body: JSON.stringify({"Email": `${email}`,"Password": `${password}`}),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => response.json())
+            .then(json => localStorage.setItem('userkey', json.value[0].UserKey))
+
+            navigate("/home")
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return <LoginPage 

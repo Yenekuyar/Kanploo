@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import HomePage from './components/Templates/HomePage/home-page.view'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import LoginController from './components/Templates/LoginPage/login-page.controller';
+import HomePageController from './components/Templates/HomePage/home-page.controller';
 
 const router = createBrowserRouter([
   {
@@ -19,13 +19,7 @@ const router = createBrowserRouter([
       },
       {
         path: "home",
-        element: <HomePage />,
-        loader: async ({ request, params }) => {
-          return fetch(
-            `/fake/api/teams/${params.teamId}.json`,
-            { signal: request.signal }
-          );
-        },
+        element: <HomePageController />
       },
     ]
   }
