@@ -6,7 +6,6 @@ export default function HomeController() {
     
     const navigate = useNavigate()
 
-
     if (userkey){
         navigate('/')
     }

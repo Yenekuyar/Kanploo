@@ -6,6 +6,7 @@ export const Header = () => {
         <HeaderStyled>
             <div className="header-container">
                 <Image 
+                    width="40px"
                     image={"/assets/images/logoroxo.png"}
                     alt={"Logo"}
                 />
