@@ -11,5 +11,6 @@ export const HeaderStyled = styled.header`
         color: transparent;
         background-clip: text;
         -webkit-background-clip: text;
+        border-bottom: 1px solid #000;
     }
 `

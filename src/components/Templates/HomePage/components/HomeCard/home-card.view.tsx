@@ -1,18 +1,18 @@
 import { Image } from "../../../../Atoms/Image/image.view"
+import { IHomeCard } from "./home-card.props"
+import { StyledHomeCard } from "./home-card.styles"
 
-export function HomeCard () {
+export function HomeCard (props: IHomeCard) {
     return (
-        <section>
-            <div>
+            <StyledHomeCard>
                 <Image  
-                    width="40px" 
-                    alt={""}
-                    image={""}
+                    width={props.imageWidth}
+                    alt={props.imageAlt}
+                    image={props.imageSrc}
                 />
-                <p>
-                    Kanban
-                </p>
-            </div>
-        </section>
+                <h2>
+                    {props.cardTitle}
+                </h2>
+            </StyledHomeCard>
     )
 }
