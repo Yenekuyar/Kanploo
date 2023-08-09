@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import LoginController from './components/Templates/LoginPage/login-page.controller';
 import HomePageController from './components/Templates/HomePage/home-page.controller';
+import KanbanPageController from './components/Templates/KanbanPage/kanban-page.controller';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
         path: "home",
         element: <HomePageController />
       },
+      {
+        path: "kanban",
+        element: <KanbanPageController />,
+      }
     ]
   }
 ])
