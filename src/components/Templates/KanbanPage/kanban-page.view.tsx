@@ -1,7 +1,7 @@
-
+import { StyledKanbanPage } from "./kanban-page.styles";
 
 export default function KanbanPage() {
     return (
-        <div>Teste</div>
+        <StyledKanbanPage>Teste</StyledKanbanPage>
     )
 }
