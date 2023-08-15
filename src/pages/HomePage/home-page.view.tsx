@@ -1,6 +1,6 @@
-import { Image } from "../../Atoms/Image/image.view";
-import HeaderController from "../../Organisms/Header/header.controller";
-import HomeCardController from "./components/HomeCard/home-card.controller";
+import HomeCardController from '../HomePage/components/HomeCard/home-card.controller';
+import HeaderController from "../../components/Organisms/Header/header.controller";
+import { Image } from "../../components/Atoms/Image/image.view";
 import { HomeCard } from "./components/HomeCard/home-card.view";
 import { HomePageStyled } from "./home-page.styles";
 

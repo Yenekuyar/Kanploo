@@ -5,9 +5,9 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import LoginController from './components/Templates/LoginPage/login-page.controller';
-import HomePageController from './components/Templates/HomePage/home-page.controller';
-import KanbanPageController from './components/Templates/KanbanPage/kanban-page.controller';
+import KanbanPageController from './pages/KanbanPage/kanban-page.controller';
+import LoginController from './pages/LoginPage/login-page.controller';
+import HomePageController from './pages/HomePage/home-page.controller';
 
 const router = createBrowserRouter([
   {
