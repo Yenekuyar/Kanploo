@@ -6,7 +6,7 @@ export const StyledHomeCard = styled.div`
     align-items: center;
     flex-direction: column;
     padding: 20px;
-    margin: 16px;
+    margin: 16px;   
     background-color: ${props => props.theme.pallete.primary.main};
     width: 180px;
     height: 180px;

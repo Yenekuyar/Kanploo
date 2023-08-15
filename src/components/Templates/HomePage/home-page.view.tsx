@@ -16,19 +16,13 @@ export default function HomePage() {
                         imageWidth={"120px"}
                         imageSrc={"/assets/images/kanban.png"}
                         imageAlt={"Kanban Route"}
-                        cardTitle="Kanban"
-                    />
+                        cardTitle="Kanban"                   
+                        />
                     <HomeCardController 
                         imageWidth={"120px"}
                         imageSrc={"/assets/images/kanban.png"}
                         imageAlt={"Kanban Route"}
-                        cardTitle="Kanban"
-                    />
-                    <HomeCardController 
-                        imageWidth={"120px"}
-                        imageSrc={"/assets/images/kanban.png"}
-                        imageAlt={"Kanban Route"}
-                        cardTitle="Kanban"
+                        cardTitle="Kanban"                   
                     />
                 </section>
             </main>

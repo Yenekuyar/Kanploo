@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import { Image } from "../../../../Atoms/Image/image.view"
 import { IHomeCard } from "./home-card.props"
 import { StyledHomeCard } from "./home-card.styles"

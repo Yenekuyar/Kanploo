@@ -1,6 +1,7 @@
 export interface IHomeCard {
-    imageWidth: string;
-    imageAlt: string;
-    imageSrc: string;
-    cardTitle: string;
+   imageWidth: string;
+   imageAlt: string;
+   imageSrc: string;
+   cardTitle: string;
 }
+
