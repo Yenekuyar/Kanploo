@@ -1,32 +1,45 @@
-import { IServer } from "./server.props";
+class Server {
+  public apiUrl: string;
 
-export default class Server {
-  private apiurl: string;
-  private endpoint: string;
-  private body?: string;
-
-  constructor(apiurl: string, endpoint: string, body?: string) {
-    this.apiurl = apiurl;
-    this.endpoint = endpoint;
-    this.body = body
+  constructor(apiUrl: string) {
+    this.apiUrl = apiUrl;
   }
 
-  get() {
-    fetch(this.apiurl + this.endpoint, {
-      method: "GET",
+  private async fetchJson(
+    endpoint: string,
+    method: string,
+     body?: any
+  ): Promise<any> {
+    const response = await fetch(this.apiUrl + endpoint, {
+      method,
       headers: {
         "Content-Type": "application/json",
       },
+      body: JSON.stringify(body),
     });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    return response.json();
   }
 
-  post() {
-    fetch(this.apiurl + this.endpoint, {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: this.body
-    });
+  async get(endpoint: string): Promise<any> {
+    return this.fetchJson(endpoint, "GET");
+  }
+
+  async post(endpoint: string, data: any): Promise<any> {
+    return this.fetchJson(endpoint, "POST", data);
+  }
+
+  async patch(endpoint: string, data: any): Promise<any> {
+    return this.fetchJson(endpoint, "PATCH", data);
+  }
+
+  async delete(endpoint: string): Promise<any> {
+    return this.fetchJson(endpoint, "DELETE");
   }
 }
+
+export default Server;

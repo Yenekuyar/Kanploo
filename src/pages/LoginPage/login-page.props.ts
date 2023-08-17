@@ -15,7 +15,7 @@ export interface ILogin {
 }
 
 export interface IProps {
-  handleEmailChange: (event: { target: { value: string | null } }) => void;
-  handlePasswordChange: (event: { target: { value: string | null } }) => void;
+  handleEmailChange: (event: { target: { value: string } }) => void;
+  handlePasswordChange: (event: { target: { value: string } }) => void;
   handleLoginSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
