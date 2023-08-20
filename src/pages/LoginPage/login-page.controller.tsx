@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
 import LoginPage from "./login-page.view";
+import { useEffect, useState } from "react";
+import { postLogin } from "./services/postLogin";
 import { useNavigate } from "react-router-dom";
-import Server from "../../Server/server.controller";
 
 export default function LoginController() {
   const [email, setEmail] = useState("");
@@ -23,35 +23,15 @@ export default function LoginController() {
     setErrorMessage("");
   }, [email, password]);
 
-  const handleLoginSubmit: React.FormEventHandler<HTMLFormElement> = async (
+  const handleLoginSubmit: React.FormEventHandler<HTMLFormElement> = (
     event: React.FormEvent<HTMLFormElement>
   ) => {
     event.preventDefault();
 
-    const apiUrl = (process.env.REACT_APP_CENTRAL_API_URL = "teste");
-    const login = new Server(apiUrl);
-
-    console.log(apiUrl)
-    async function postLogin(){
-      try{
-        const postData = await login.post('/Self/Login', JSON.stringify({ Email: `${email}`, Password: `${password}` }));
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    postLogin()
-    // fetch("https://central-api.ploomes.com/api/Self/Login", {
-    //   method: "POST",
-    //   body: JSON.stringify({ Email: `${email}`, Password: `${password}` }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((json) => localStorage.setItem("userkey", json.value[0].UserKey));
-
-    // navigate("/home");
+    postLogin(email, password);
+    // [TODO] - Verificar como que eu vou meter uma verificação nesse navigate pra só qnd logar ele navegar.
+      navigate("/home")
+    // documentation.ploomes
   };
 
   return (

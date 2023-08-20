@@ -1,44 +1,40 @@
 class Server {
-  public apiUrl: string;
+  private apiUrl: string;
 
   constructor(apiUrl: string) {
     this.apiUrl = apiUrl;
   }
 
-  private async fetchJson(
+  private fetchJson<RETURN_TYPE, BODY_TYPE>(
     endpoint: string,
-    method: string,
-     body?: any
-  ): Promise<any> {
-    const response = await fetch(this.apiUrl + endpoint, {
+    method: 'GET' | 'POST' | 'PATCH' | 'DELETE',
+    body?: BODY_TYPE
+  ): Promise<RETURN_TYPE> {
+    const response = fetch(this.apiUrl + endpoint, {
       method,
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
-    });
+    }).then(response => response.json());
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    return response.json();
+    return response;
   }
 
-  async get(endpoint: string): Promise<any> {
-    return this.fetchJson(endpoint, "GET");
+  get<RETURN_TYPE>(endpoint: string): Promise<RETURN_TYPE> {
+    return this.fetchJson<RETURN_TYPE, any>(endpoint, "GET");
   }
 
-  async post(endpoint: string, data: any): Promise<any> {
-    return this.fetchJson(endpoint, "POST", data);
+  post<RETURN_TYPE, BODY_TYPE>(endpoint: string, data: any): Promise<any> {
+    return this.fetchJson<RETURN_TYPE, BODY_TYPE>(endpoint, "POST", data);
   }
 
-  async patch(endpoint: string, data: any): Promise<any> {
+  patch<RETURN_TYPE, BODY_TYPE>(endpoint: string, data: any): Promise<any> {
     return this.fetchJson(endpoint, "PATCH", data);
   }
 
-  async delete(endpoint: string): Promise<any> {
-    return this.fetchJson(endpoint, "DELETE");
+  delete<RETURN_TYPE>(endpoint: string): Promise<any> {
+    return this.fetchJson<RETURN_TYPE, any>(endpoint, "DELETE");
   }
 }
 
