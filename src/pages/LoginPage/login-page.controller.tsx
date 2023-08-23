@@ -30,7 +30,7 @@ export default function LoginController() {
 
     postLogin(email, password);
     // [TODO] - Verificar como que eu vou meter uma verificação nesse navigate pra só qnd logar ele navegar.
-      navigate("/home")
+    navigate("/home");
     // documentation.ploomes
   };
 

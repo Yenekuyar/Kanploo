@@ -18,6 +18,7 @@ class Server {
       body: JSON.stringify(body),
     }).then(response => response.json());
 
+    // [TODO] Retornar status code e data
     return response;
   }
 

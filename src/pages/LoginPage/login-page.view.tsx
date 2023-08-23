@@ -10,7 +10,6 @@ export default function LoginPage(props: IProps) {
       <div className="login-page">
         <form className="login-form" onSubmit={props.handleLoginSubmit}>
           <LoginTitle>Kanploo</LoginTitle>
-          {}
           <LoginInputWrapper
             type="text"
             placeholder="Enter E-mail"
